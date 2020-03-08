@@ -15,14 +15,7 @@ var return_history = function () {
     insertHTML(s, "return-history");
 }
 
-var load_resources = function () {
-    document.head.insertAdjacentHTML('beforeend', '<link href="/css/hagureyouma.css" rel="stylesheet" type="text/css">');
-    document.head.insertAdjacentHTML('beforeend', '<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">');
-    document.head.insertAdjacentHTML('beforeend', '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">');
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    load_resources();
-    return_home();
+(function(){
     return_history();
-});
+    return_home();
+})();
