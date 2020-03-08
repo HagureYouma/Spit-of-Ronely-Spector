@@ -2,16 +2,16 @@
 :root {
     /*フォントサイズ*/
     --fs-base: 12px;
-    --fs-xxl: 2em;
-    --fs-xl: 1.5em;
-    --fs-l: 1.2em;
-    --fs-m: 1em;
-    --fs-s: 0.8em;
-    --fs-xs: 0.6em;
+    --fs-xxl: 2rem;
+    --fs-xl: 1.5rem;
+    --fs-l: 1.2rem;
+    --fs-m: 1rem;
+    --fs-s: 0.8rem;
+    --fs-xs: 0.6rem;
 
     /*カラー*/
     --c-bg: #333333;
-    --c-accent:#FF66CC;
+    --c-accent: #FF66CC;
     --c-text: #CCCCCC;
     --c-a-link: #CCCCCC;
     --c-a-visited: #999999;
@@ -20,15 +20,15 @@
     --c-hr-text: #CCCCCC;
 
     /*テキスト*/
-    --tx-lh: 1.5em;
+    --tx-lh: 1.5rem;
 
     /*水平線*/
     --hr-text-size: 0.6rem;
-    --hr-text-top: -0.5rem;
+    --hr-text-top: -0.85rem;
     --hr-text-pad: 0.5rem;
-    
+
     /*大きさとか*/
-    --illust-menu-width:300px;
+    --illust-menu-width: 300px;
 }
 
 /*共通*/
@@ -95,22 +95,22 @@ div.inline {
     text-align: left;
 }
 
-div.maincontainer{
-    max-width: 800px;
-}
-
 div.inline-right {
     display: inline-block;
     text-align: right;
 }
 
-span.accent{
+div.maincontainer {
+    max-width: 800px;
+}
+
+span.accent {
     color: var(--c-accent);
 }
 
 hr {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
     height: 1px;
     position: relative;
     overflow: visible;
@@ -118,8 +118,8 @@ hr {
     width: 90%;
     margin-left: 0;
     background-image: linear-gradient(90deg,
-        var(--c-text) 50%,
-        transparent);
+            var(--c-text) 50%,
+            transparent);
 }
 
 hr::after {
@@ -139,9 +139,9 @@ hr.menu {
     width: 500px;
     margin-left: auto;
     background-image: linear-gradient(90deg,
-        transparent,
-        var(--c-text) 50%,
-        transparent);
+            transparent,
+            var(--c-text) 50%,
+            transparent);
 }
 
 hr.menu::after {
@@ -152,24 +152,15 @@ iframe {
     border: none;
 }
 
-/*アイコン付きリンク*/
+/*アイコン付きテキスト*/
 
-ul.icon {
-    position: relative;
-    left: -3em;
-}
-
-ul.icon li {
-    list-style-type: none;
-}
-
-ul.icon li::before {
+span.icon::before {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     content: "\f105";
     position: relative;
     left: -0.25em;
-    color: var(--c-text);
+    color: var(--c-accent);
 }
 
 #icon-illust::before {
@@ -214,27 +205,21 @@ ul.icon li::before {
     font-size: var(--fs-m);
 }
 
-.home-menu {
+.home-menu-table {
     display: inline-block;
     text-align: left;
-    font-size: var(--fs-l);
     line-height: 3rem;
+    border-spacing: 1rem 0rem;
 }
 
-.home-menu li{
-
+.home-menu-table td.item{
+    text-align: right;
+    font-size: var(--fs-l);
 }
 
-.home-menu li::after{
-    position:relative;
-    content: attr(data-content);
-    font-size: var(--fs-s);
-    left:1em;
-}
+/*画像*/
 
-/*イラスト*/
-
-.illust-menu{
+.illust-menu {
     position: relative;
     width: var(--illust-menu-width);
     height: 100%;
@@ -249,7 +234,7 @@ ul.icon li::before {
     height: 100%;
 }
 
-iframe.main{
+iframe.main {
     width: 100%;
     height: 100%;
 }
@@ -259,15 +244,18 @@ img.illust {
 }
 
 /*表*/
-.table-common{
+.table-common {
     border-collapse: collapse;
-    width:100%;
-}
-.table-common th{
+    width: 100%;
 }
 
-@media only screen and(max-width:800px){
-    .table-common tr,.table-common th,.table-common tr{
+.table-common th {}
+
+@media only screen and(max-width:800px) {
+
+    .table-common tr,
+    .table-common th,
+    .table-common tr {
         display: block;
         width: auto;
     }
