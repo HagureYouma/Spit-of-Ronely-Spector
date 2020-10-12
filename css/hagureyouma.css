@@ -11,7 +11,7 @@
 
     /*カラー*/
     --c-bg: #9b9b9b;
-    --c-main:#FFe5e4;
+    --c-main:#fef4f4;
     --c-accent: #f3a1b8;
     --c-text: #5d5d5d;
     --c-head: #fdfdfd;
@@ -288,3 +288,4 @@ img.illust {
         width: auto;
     }
 }
+
