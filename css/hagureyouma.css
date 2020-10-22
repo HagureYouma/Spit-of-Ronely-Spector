@@ -2,12 +2,12 @@
 :root {
     /*フォントサイズ*/
     --fs-base: 100%;
-    --fs-xxl: 2rem;
-    --fs-xl: 1.5rem;
-    --fs-l: 1.25rem;
-    --fs-m: 1rem;
-    --fs-s: 0.75rem;
-    --fs-xs: 0.5rem;
+    --fs-xxl: 2em;
+    --fs-xl: 1.5em;
+    --fs-l: 1.25em;
+    --fs-m: 1em;
+    --fs-s: 0.75em;
+    --fs-xs: 0.5em;
 
     /*カラー*/
     --c-bg: #9b9b9b;
@@ -16,9 +16,10 @@
     --c-text: #5d5d5d;
     --c-highlite: #fdfdfd;
     --c-alternate: #ededed;
+    --c-caution:#ff0000;
     --c-a-link: var(--c-text);
     --c-a-visited: var(--c-bg);
-    --c-a-hover: var(--c-accent);
+    --c-a-hover: var(--c-text);
     --c-a-active: var(--c-accent);
     --c-hr: var(--c-text);
 
@@ -28,8 +29,7 @@
 }
 
 /*共通*/
-html {
-}
+html {}
 
 body {
     background-color: var(--c-bg);
@@ -40,14 +40,16 @@ h1 {
     font-size: var(--fs-xxl);
 }
 
-h1.head {}
+h1.head {
+    margin: 1rem 0;
+}
 
 h1.head::before {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     content: "\f6e2";
     color: var(--c-accent);
-    margin-right: 0.25rem;
+    margin-right: 0.2em;
 }
 
 h2 {
@@ -57,9 +59,8 @@ h2 {
 h2.head {
     background: var(--c-accent);
     color: var(--c-text);
-    padding: 0.5em;
+    padding: 0.25em 0.5em;
     border-radius: 0.5em;
-    vertical-align: middle;
 }
 
 h2.head::before {
@@ -67,7 +68,7 @@ h2.head::before {
     font-weight: 900;
     content: "\f6e2";
     color: var(--c-highlite);
-    margin-right: 0.25rem;
+    margin-right: 0.2em;
 }
 
 h3 {
@@ -81,7 +82,7 @@ h3.head::before {
     font-weight: 900;
     content: "\f6e2";
     color: var(--c-accent);
-    margin-right: 0.25rem;
+    margin-right: 0.2em;
 }
 
 h4 {
@@ -108,9 +109,29 @@ span.accent {
     color: var(--c-accent);
 }
 
+span.caution {
+    color: var(--c-caution);
+}
+
+.caution {}
+
+.caution::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f071";
+    color: var(--c-caution);
+    margin-right: 0.2em;
+}
+
+.caution::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f071";
+    color: var(--c-caution);
+    margin-left: 0.2em;
+}
 a:link {
     color: var(--c-a-link);
-    text-decoration: none;
 }
 
 a:visited {
@@ -118,18 +139,16 @@ a:visited {
 }
 
 a:hover {
-    color: var(--c-a-hover);
-    text-decoration: underline;
 }
 
 a:active {
     color: var(--c-a-active);
 }
 
-a.area{
+.area {
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
 }
@@ -149,52 +168,49 @@ hr {
     border-top: 2px dashed var(--c-hr);
 }
 
-.horizontal-line-text {
-    margin: 0.5rem 0;
+.hr-text {
+    margin: 1em 0 0.7em 0;
     display: flex;
-    justify-content: center;
+    flex-wrap: nowrap;
     align-items: center;
 }
 
-.horizontal-line-text .text {
-    position: relative;
-    margin-left: 1em;
-    margin-right: 1em;
+.hr-text div {
+    margin-top: 0.3em;
     content: attr(data-content);
     font-family: 'Press Start 2P', cursive;
 
 }
 
-.horizontal-line-text .text::before {
-    position: absolute;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f6e2";
-    color: var(--c-accent);
-    margin-left: -1em;
-    margin-top: -0.1em;
-}
-
-.horizontal-line-text .text::after {
-    position: absolute;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f6e2";
-    color: var(--c-accent);
-    margin-top: -0.1em;
-}
-
-.horizontal-line-text .line {
-    flex-grow: 1;
-    margin-top: -0.2em;
-}
-
-.list {
+.hr-text div::before {
     position: relative;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f6e2";
+    color: var(--c-accent);
+    top: -0.2em;
+    margin-right: 0.2em;
 }
+
+.hr-text div::after {
+    position: relative;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f6e2";
+    color: var(--c-accent);
+    top: -0.2em;
+    margin-right: 0.2em;
+}
+
+.hr-text hr {
+    flex-grow: 1;
+}
+
+.list {}
 
 .list li {
-    list-style-type: none !important;
+    list-style-type: none;
+    margin-left: -1.5em;
 }
 
 .list li::before {
@@ -202,8 +218,7 @@ hr {
     font-weight: 900;
     content: "\f00c";
     color: var(--c-accent);
-    position: absolute;
-    left: 1em;
+    margin-right: 0.5em;
 }
 
 .menu {
@@ -218,8 +233,8 @@ hr {
 }
 
 .menu ul li {
-    list-style-type: none !important;
-    position: relative;
+    list-style-type: none;
+    margin-left: -1.5em;
 }
 
 .menu ul li::before {
@@ -227,9 +242,33 @@ hr {
     font-weight: 900;
     content: "\f138";
     color: var(--c-accent);
-    position: absolute;
-    left: -1em;
+    margin-right: 0.5em;
 }
+
+ol{}
+ol li{
+    margin: 1em 0em 1em 0em;
+}
+
+dl {}
+
+dt {
+    margin: 1em 0em 1em 1em;
+    font-weight: bold;
+}
+
+dt::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f00c";
+    color: var(--c-accent);
+    margin-right: 0.5em;
+}
+
+dd {
+    margin: 1em 0em 1em 2.5em;
+}
+
 
 table {
     border-collapse: collapse;
@@ -237,13 +276,14 @@ table {
     margin: 1em 0;
 }
 
-table td:first-child{
+table td:first-child {
     font-weight: bold;
 }
 
 table tr:nth-child(even) {
     background-color: var(--c-highlite);
 }
+
 table tr:nth-child(odd) {
     background-color: var(--c-alternate);
 }
@@ -283,7 +323,7 @@ table td {
     align-items: flex-start;
     background: var(--c-text);
     color: var(--c-highlite);
-    margin: 0.5em 0.5em 3em;
+    margin: 0.5em 0.5em 2em;
     padding: 0.5em;
     border-radius: 1em;
     border: dashed 2px var(--c-accent);
@@ -312,20 +352,18 @@ table td {
     text-align: center;
 }
 
-.footer{
+.footer {
     margin-top: 2em;
 }
 
-.footer a{
-    position: relative;    
-}
+.footer a {}
 
 .footer a::before {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     content: "\f6e2";
     color: var(--c-accent);
-    margin-right: 0.25em;
+    margin-right: 0.2em;
 }
 
 .footer a::after {
@@ -333,7 +371,7 @@ table td {
     font-weight: 900;
     content: "\f6e2";
     color: var(--c-accent);
-    margin-left: 0.25em;
+    margin-left: 0.2em;
 }
 
 /*画像*/
