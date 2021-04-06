@@ -204,8 +204,11 @@ hr {
 
 .list li {
     list-style-type: none;
+    margin: 1em 0em 1em -1.5em;
+}
+
+.list table {
     margin-left: -1.5em;
-    margin: 1em 0em 1em 0em;
 }
 
 .list li::before {
