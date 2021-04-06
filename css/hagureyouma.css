@@ -203,12 +203,9 @@ hr {
 .list {}
 
 .list li {
-    list-style-type: none;
-    margin: 1em 0em 1em -1.5em;
-}
-
-.list table {
-    margin-left: -1.5em;
+    list-style-type:none;    
+    margin-bottom: 1em;
+    text-indent: -1.5em;
 }
 
 .list li::before {
